@@ -15,6 +15,14 @@ void swap(int *x, int *y)
 	*y = temp;
 }
 
+/**
+ * selection_sort - sorts an array of integers in ascending order
+ * @array: the array
+ * @size: size of array
+ *
+ * Return: void
+ */
+
 void selection_sort(int *array, size_t size)
 {
 	size_t i, j;
@@ -26,15 +34,14 @@ void selection_sort(int *array, size_t size)
 
 		for (j = i + 1; j < size; j++)
 		{
-				
 			if (array[j] < array[min_i])
-				min_i = j;	
+				min_i = j;
 		}
 
 		if (i != min_i)
 		{
 			swap(&array[i], &array[min_i]);
-			print_array((const int*)array, size);
+			print_array((const int *)array, size);
 		}
 	}
 }
