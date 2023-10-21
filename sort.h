@@ -37,5 +37,6 @@ void print_array(const int *array, size_t size);
 void bubble_sort(int *array, size_t size);
 void swap(int *x, int *y);
 void insertion_sort_list(listint_t **list);
+void node_swap(listint_t **l, listint_t **curr, listint_t *n);
 
 #endif

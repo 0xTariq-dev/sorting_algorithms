@@ -1,30 +1,50 @@
 #include "sort.h"
 
-/*
- * */
+/**
+ * node_swap - Swaps two nodes in a doubly linked list.
+ * @l: A pointer to list head.
+ * @curr: A pointer to first node.
+ * @n: The second node.
+ */
+void node_swap(listint_t **l, listint_t **curr, listint_t *n)
+{
+	(*curr)->next = n->next;
+	if (n->next != NULL)
+		n->next->prev = *curr;
 
+	n->prev = (*curr)->prev;
+	n->next = *curr;
 
+	if ((*curr)->prev != NULL)
+		(*curr)->prev->next = n;
+	else
+		*l = n;
+
+	(*curr)->prev = n;
+	*curr = n->prev;
+}
+
+/**
+ * insertion_sort_list - Sort a linked list using insertion sort algorithm.
+ *
+ * @list: A pointer to list head.
+ */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t* tmp, *current;
+	listint_t *tmp, *curr, *ins;
 
-	if (!(*list))
-	{
+	if (!list || !(*list) || !((*list)->next))
 		return;
-	}
 
-	for (current = *list; current->next != NULL; current = current->next)
+	for (curr = (*list)->next; curr != NULL; curr = tmp)
 	{
-		for (tmp = current->next; tmp != NULL; tmp = tmp->next)
+		tmp = curr->next;
+		ins = curr->prev;
+
+		while (ins != NULL && curr->n < ins->n)
 		{
-			if (tmp->n < current->n)
-			{
-				tmp->prev = current->prev;
-				current->next = tmp->next;
-				tmp->next = current;
-				current->prev = tmp;
-			}
+			node_swap(list, &ins, curr);
+			print_list((const listint_t *)*list);
 		}
 	}
-	
 }
