@@ -20,9 +20,9 @@ void swap(int *x, int *y)
 
 /**
  * lumoto_part - Handles partioning as 'lumoto' scheme.
- * @array: A pointer to the array to sort.
- * @lo: The start position.
- * @hi: The end position.
+ * @arr: A pointer to the array to sort.
+ * @left: The start position.
+ * @right: The end position.
  * @size: The size of the array.
  *
  * Return: pivot index.
@@ -34,7 +34,7 @@ int lumoto_part(int *arr, int left, int right, size_t size)
 
 	for (x = left; x < right; x++)
 	{
-		if(arr[x] < pivot)
+		if (arr[x] < pivot)
 		{
 			swap(&arr[i], &arr[x]);
 			if (i != x)
@@ -50,8 +50,8 @@ int lumoto_part(int *arr, int left, int right, size_t size)
 }
 
 /**
- * sort_helper - Manage low and high caluclations and sorting recursion.
- * @array: A pointer to the array to sort.
+ * Qsort - Manage low and high caluclations and sorting recursion.
+ * @arr: A pointer to the array to sort.
  * @lo: The start position.
  * @hi: The end position.
  * @size: The size of the array.
