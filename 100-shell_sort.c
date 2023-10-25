@@ -13,6 +13,11 @@ void shell_sort(int *array, size_t size)
 	int temp;
 	size_t j, i, gap = 1;
 
+	if (size <= 1)
+	{
+		return;
+	}
+
 	while (gap < size / 3)
 	{
 		gap = gap * 3 + 1;
