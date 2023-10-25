@@ -41,5 +41,7 @@ void node_swap(listint_t **l, listint_t **curr, listint_t *n);
 void selection_sort(int *array, size_t size);
 void shell_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
+int lumoto_part(int *arr, int lo, int hi, size_t size);
+void Qsort(int *arr, int lo, int hi, size_t size);
 
 #endif

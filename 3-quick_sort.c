@@ -1,8 +1,5 @@
 #include "sort.h"
 
-int lumoto_part(int *arr, int lo, int hi, size_t size);
-void Qsort(int *arr, int lo, int hi, size_t size);
-
 /**
  * swap - Swaps two elements in an array.
  * @x: The first element's pointer.
@@ -30,20 +27,23 @@ void swap(int *x, int *y)
 int lumoto_part(int *arr, int left, int right, size_t size)
 {
 	int pivot = arr[right];
-	int i = left, x;
+	int i = left, x, all_equal = 1;
 
 	for (x = left; x < right; x++)
 	{
+		if (arr[x] != pivot)
+			all_equal = 0;
+
 		if (arr[x] < pivot)
 		{
 			swap(&arr[i], &arr[x]);
-			if (i != x)
+			if (i != x && !all_equal)
 				print_array(arr, size);
 			i++;
 		}
 	}
 	swap(&arr[i], &arr[right]);
-	if (i != x)
+	if (i != x && !all_equal)
 		print_array(arr, size);
 
 	return (i);
@@ -80,5 +80,6 @@ void quick_sort(int *array, size_t size)
 {
 	if (size < 2)
 		return;
+
 	Qsort(array, 0, (int)size - 1, size);
 }
