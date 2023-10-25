@@ -3,8 +3,8 @@
 /**
  * node_swap - Swaps two nodes in a doubly linked list.
  * @l: A pointer to list head.
- * @curr: A pointer to first node.
- * @n: The second node.
+ * @n1: The first node.
+ * @n2: The second node.
  */
 void node_swap(listint_t **l, listint_t *n1, listint_t *n2)
 {
