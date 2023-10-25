@@ -37,11 +37,12 @@ void print_array(const int *array, size_t size);
 void bubble_sort(int *array, size_t size);
 void swap(int *x, int *y);
 void insertion_sort_list(listint_t **list);
-void node_swap(listint_t **l, listint_t **curr, listint_t *n);
+void node_swap(listint_t **l, listint_t *n1, listint_t *n2);
 void selection_sort(int *array, size_t size);
 void shell_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
 int lumoto_part(int *arr, int lo, int hi, size_t size);
 void Qsort(int *arr, int lo, int hi, size_t size);
+void cocktail_sort_list(listint_t **list);
 
 #endif
