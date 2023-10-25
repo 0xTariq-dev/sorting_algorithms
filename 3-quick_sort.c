@@ -32,7 +32,7 @@ int lumoto_part(int *arr, int left, int right, size_t size)
 	int pivot = arr[right];
 	int i = left, x;
 
-	for (x = left; x <= right; x++)
+	for (x = left; x < right; x++)
 	{
 		if (arr[x] < pivot)
 		{
